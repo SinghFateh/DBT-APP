@@ -1,0 +1,36 @@
+
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: transaction_vw
+    description: "raw transactions view"
+    columns:
+      - name: id
+        type: integer
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: amount
+        description: "transaction amount"
+        type: double
+        tests:
+          - not_null
